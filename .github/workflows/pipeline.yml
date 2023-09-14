@@ -1,0 +1,16 @@
+# este é um arqivo para prática de criação de pipeline
+
+name: conchayoro-pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: exeuta comando
+        run: echo "Configuração inicial de pipeline"
+
+ 
