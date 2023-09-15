@@ -1,14 +1,13 @@
 name: steps exemples
+
 on:
-  push:
-    branches: [ "main" ]
-
-jobx:
-
+  push 
+  
+jobs:  
+  teste: 
     runs-on: ubuntu-latest
-
-    steps:
-        - name: Configuração dp node (pesquisar no marketplace...)
-          uses: ???
-        - name: verification of node version
-          run: node --version
+    steps:    
+      - name: Configuração dp node (pesquisar no marketplace...)
+      - uses: actions/checkout@v3
+      - name: verification of node version
+        run: node --version
