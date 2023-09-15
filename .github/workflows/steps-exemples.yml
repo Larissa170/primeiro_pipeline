@@ -1,10 +1,10 @@
 name: steps exemples
 
 on:
-  workflow_dispatch 
+ push
   
 jobs:  
-  teste: 
+  marketplace: 
     runs-on: ubuntu-latest
     steps:    
       - uses: actions/checkout@v3
@@ -13,3 +13,15 @@ jobs:
           node-version: 18
       - name: verification of node version
         run: node --version
+  hello_word_job:
+    runs-on: ubuntu-latest
+    name: exemple of custom action
+    steps:
+      - name: Checkout Actions
+        uses: actions/checkout@v2
+      - id: step-caller
+        uses: "./.github/actions/hello"
+        with:
+          the-caller: 'Myself'
+      - run: echo random-number ${{ steps.step-caller.outputs.random-number }}
+        shell: bash
